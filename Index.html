@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Geist+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar to match the brutalist aesthetic */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #fff8f3; }
+        ::-webkit-scrollbar-thumb { background: #8a726c; }
+        
+        .block-shadow {
+            box-shadow: 12px 12px 0px 0px #1e1b17;
+        }
+        .text-vertical {
+            writing-mode: vertical-rl;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Force Serif globally as requested */
+        body, p, h1, h2, h3, h4, h5, h6, a, button, input, textarea {
+            font-family: 'Libre Caslon Text', serif !important;
+        }
+        
+        /* Monospace for labels and technical data */
+        .technical-data {
+            font-family: 'Geist Mono', monospace !important;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#ddc0ba",
+                      "surface-bright": "#fff8f3",
+                      "on-background": "#1e1b17",
+                      "secondary": "#4b5c94",
+                      "on-tertiary-fixed": "#211b0f",
+                      "on-error": "#ffffff",
+                      "primary-fixed": "#ffdad2",
+                      "on-primary-fixed": "#3c0700",
+                      "inverse-surface": "#34302b",
+                      "tertiary-container": "#726959",
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#e1d9d2",
+                      "background": "#fff8f3",
+                      "error-container": "#ffdad6",
+                      "inverse-primary": "#ffb4a2",
+                      "on-secondary-fixed-variant": "#33447b",
+                      "secondary-fixed-dim": "#b5c4ff",
+                      "primary-fixed-dim": "#ffb4a2",
+                      "surface-container-highest": "#e9e1da",
+                      "primary": "#8f341d",
+                      "surface-variant": "#e9e1da",
+                      "surface": "#fff8f3",
+                      "surface-container-low": "#fbf2eb",
+                      "surface-tint": "#a04028",
+                      "error": "#ba1a1a",
+                      "surface-container": "#f5ece6",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed": "#dce1ff",
+                      "on-tertiary": "#ffffff",
+                      "primary-container": "#af4b32",
+                      "on-secondary-container": "#3b4c83",
+                      "surface-container-high": "#efe7e0",
+                      "tertiary": "#595142",
+                      "on-primary-container": "#ffe6e0",
+                      "on-surface-variant": "#56423d",
+                      "on-tertiary-container": "#f7ead6",
+                      "outline": "#8a726c",
+                      "inverse-on-surface": "#f8efe8",
+                      "on-secondary-fixed": "#00164d",
+                      "on-secondary": "#ffffff",
+                      "on-surface": "#1e1b17",
+                      "tertiary-fixed": "#ede1cd",
+                      "on-primary-fixed-variant": "#802913",
+                      "tertiary-fixed-dim": "#d1c5b2",
+                      "on-tertiary-fixed-variant": "#4d4638",
+                      "secondary-container": "#aebffe"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-xl": "120px",
+                      "stack-lg": "64px",
+                      "stack-md": "32px",
+                      "margin-mobile": "20px",
+                      "gutter": "32px",
+                      "margin-tablet": "40px",
+                      "margin-desktop": "80px",
+                      "unit": "8px"
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary selection:text-white">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-background/90 backdrop-blur-sm border-b border-outline/20">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit max-w-[1440px] mx-auto">
+<a class="text-[24px] md:text-[32px] text-primary uppercase tracking-tighter" href="#">CT STUDIO</a>
+<nav class="hidden md:flex gap-10 items-center">
+<a class="technical-data text-[12px] font-semibold text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase" href="#portfolio">Portfolio</a>
+<a class="technical-data text-[12px] font-semibold text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase" href="#studio">Studio</a>
+<a class="technical-data text-[12px] font-semibold text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase" href="#craft">Craft</a>
+<a class="technical-data text-[12px] font-semibold text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase" href="#contact">Contact</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-2 technical-data text-[12px] font-semibold uppercase tracking-widest hover:scale-95 transition-transform duration-200" onclick="document.getElementById('contact').scrollIntoView()">
+                Inquire
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen pt-32 pb-stack-lg overflow-hidden grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+<div class="md:col-start-1 md:col-span-11 relative aspect-[16/9] w-full">
+<img alt="Carlos Tenopala Packaging Engineering" class="w-full h-full object-cover grayscale-[0.2] sepia-[0.1]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGm0hVMywkIWDiegY-SWT0aetQse9Z5LObffsHQOV9QoYjAsTAnV2J9gFWabnEAJcDyLvSpYgZBiYYjRBKITZ51RzohYpFBZKS_BNZZdWRm8BzOuzZLq9tpPiSCIcxVcKMi8JxhO-NLBwwbWSYTZdBrwjeT5dXnWcDDatzW6xAfr2EiWSJ4vL0UwnMQDlCtG-F4h6D5EhImNde75izCe8HZ81nOTVsUvaybew83a4fbKSM3uFJsrMN3fIXmqijNWkHQdSew2W1ozM"/>
+<div class="absolute inset-0 bg-on-background/5"></div>
+</div>
+<!-- Technical markers -->
+<div class="absolute top-48 right-margin-desktop hidden lg:block">
+<p class="technical-data text-[12px] text-primary/60 rotate-90 origin-right">COORD: 19.4326° N, 99.1332° W</p>
+</div>
+<div class="md:col-start-2 md:col-span-8 mt-12 md:-mt-24 relative z-10 bg-background md:p-12 p-6 border border-outline/30">
+<p class="technical-data text-[12px] font-semibold text-primary mb-4 uppercase">Estudio de Diseño // México</p>
+<h1 class="text-[48px] md:text-[72px] uppercase mb-2 leading-tight">
+                    Carlos<br/>Tenopala
+                </h1>
+<p class="technical-data text-[12px] font-semibold text-secondary mb-6 tracking-[0.3em] uppercase">Especialista en Identidad &amp; Gráfica</p>
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<p class="text-[18px] max-w-md text-on-surface-variant">Buscamos la belleza en la claridad visual. Una intersección entre la excelencia gráfica y la creatividad funcional.</p>
+<div class="technical-data text-[12px] text-on-surface-variant/40 space-y-1">
+<p class="">ID: CT_2026_PRO</p>
+<p class="">PACKAGING SPECIALIST // 01</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Story -->
+<section class="py-stack-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto border-t border-outline/10" id="studio">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-start-2 md:col-span-4">
+<h2 class="text-[36px] md:text-[48px] sticky top-32 text-primary leading-snug whitespace-nowrap">Creatividad<br/>Funcional</h2>
+</div>
+<div class="md:col-start-7 md:col-span-5 space-y-stack-md">
+<div class="space-y-6">
+<p class="technical-data text-[12px] font-semibold text-secondary uppercase tracking-[0.2em]">Manifiesto 0.1</p>
+<p class="text-[18px] leading-relaxed text-on-surface">Nuestra práctica se enfoca en la comunicación visual estratégica. Creemos en el poder del diseño para transformar marcas. Cada proyecto es un equilibrio entre la estética sofisticada y el impacto comercial.</p>
+<p class="text-[18px] leading-relaxed text-on-surface-variant">Entendemos el diseño gráfico como el puente fundamental entre una marca y su audiencia. No creamos solo imágenes; construimos sistemas visuales que perduran. La funcionalidad es la esencia del buen diseño.</p>
+</div>
+<div class="h-[1px] w-full bg-outline/30"></div>
+<div class="grid grid-cols-2 gap-8">
+<div id="craft">
+<span class="technical-data text-[12px] font-semibold text-primary uppercase">01. Gráfica</span>
+<p class="text-[14px] mt-2 text-on-surface-variant">Desarrollo de sistemas visuales con rigor conceptual y ejecución impecable.</p>
+</div>
+<div>
+<span class="technical-data text-[12px] font-semibold text-primary uppercase">02. Impacto</span>
+<p class="text-[14px] mt-2 text-on-surface-variant">Soluciones creativas que potencian la presencia de marca en entornos competitivos.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Showcase -->
+<section class="bg-surface-container py-stack-xl px-margin-mobile md:px-margin-desktop overflow-hidden" id="portfolio">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex justify-between items-end mb-16 border-b border-outline/20 pb-8">
+<div>
+<p class="technical-data text-[12px] font-semibold text-secondary mb-2 uppercase">Portafolio de Diseño</p>
+<h2 class="text-[32px]">Showcase de Proyectos</h2>
+</div>
+<a class="technical-data text-[12px] font-semibold text-primary hover:underline flex items-center gap-2 uppercase" href="#" onclick="alert('Explorando archivo completo...')">
+                        Ver Archivo <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Portfolio Item 1: All-Bran -->
+<div class="md:col-span-8 group cursor-pointer mb-stack-md">
+<div class="relative overflow-hidden aspect-[16/9] mb-6 border border-outline/10 bg-white">
+<img alt="All-Bran Packaging Engineering" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz3IXRXMd5bxkoYWCMTwaVbelGTygmTmHOSBwApP-kO8F0gWoJDHr9s4gOl9Y6dEPhyUSMhWddO-x1CW0KSqmZyORC57vjAlPpLGZgBUEov1W3xsymrjsQUFj3rph0dVpyThvQDj7D0trL9FwevAnrMeI4iu3xTt73tEvn0MS2jY5t6epNLUq_FZ2PqH_MBrmX6GEbaxegMsNA4uoz0mVb86VFoGS-iyfr2cqWiocnCrqJLNZLX93KiLJoF_O-YFy8lgihGzu6A_M"/>
+<div class="absolute top-4 left-4 bg-background px-3 py-1 technical-data text-[10px] border border-outline/20 uppercase">Pack_01 // Industrial</div>
+</div>
+<div class="flex justify-between items-start">
+<h3 class="text-[32px]">All-Bran Packaging</h3>
+</div>
+</div>
+<!-- Portfolio Item 2: Frosties -->
+<div class="md:col-span-4 md:mt-24 group cursor-pointer mb-stack-md">
+<div class="relative overflow-hidden aspect-[1/1] mb-6 border border-outline/10 bg-white">
+<img alt="Bosch Water Heater Packaging - Professional Architectural Showcase" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/ADBb0uhhpkzNmudiZ-fEu0BNWMqN2WDOsuqsjtxBhkOqyMtpoDKJjdWn9r26VyI-UjF-mIHLFzOEShUMskKyScQfGR0KnqBGQkU1I1zwsYITRFdsvcMfWUR9hSIBsDe8LN9XnaF2b68zLhB4-XtnXi-d-iCfOsMDXHBuNn21b-Gg8pXMsHKyejeXGuXbHaevWOgyvfgK1UNLe1wNrzkqAswQ8TnqnYkDUdbJXHg7npBDpUKIDEVUn7UFzB1ycw"/>
+<div class="absolute top-4 left-4 bg-secondary text-on-secondary px-3 py-1 technical-data text-[10px] uppercase">Pack_02 // Functional</div>
+</div>
+<div class="flex flex-col">
+<h3 class="text-[32px]">Bosch Water Heater Packaging</h3>
+</div>
+</div>
+<!-- Portfolio Item 3: Star Wars -->
+<div class="md:col-start-1 md:col-span-5 group cursor-pointer mb-stack-md md:-mt-12">
+<div class="relative overflow-hidden aspect-[1/1] mb-6 border border-outline/10 bg-white">
+<img alt="Star Wars Special Edition Technical Shoot" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmlFQgVkQEi19v_YGeGHQboZDJbUHivD9oS7hIQP-DcfNrxURSC0g1G4lkKz6wj8FoRsPOlWFvXeEiZQ8rsXeoQbd1Faiz10LB7cRuuf0YYn5QZ3YgdU374Q5fX51cJDqjdUhiih2b9NVIIWx2dn-KEh-hsyyK6UpgkwmZs9ewjlAWoU8H4-Q-aBWy1daNbDqDvLxi4oGs4bYcrybfiGpCVQT6wT0TvabLh81Yk5B8uTsr1uBwKkNnHaFQ8wrq49aTnFBMLHlC_eY"/>
+<div class="absolute top-4 left-4 bg-background px-3 py-1 technical-data text-[10px] border border-outline/20 uppercase">Special_01 // Edition</div>
+</div>
+<h3 class="text-[32px]">Star Wars Special Edition</h3>
+</div>
+<!-- Portfolio Item 4: Palabrería -->
+<div class="md:col-start-7 md:col-span-6 group cursor-pointer">
+<div class="relative overflow-hidden aspect-[4/5] mb-6 border border-outline/10 bg-white">
+<img alt="Professional studio photography of the printed Palabrería magazine on a minimalist architectural surface." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPXgGLp-LXld4VED2NNLoDljcAZ4-J-yve70CQjHFKrm7aP3I-06IfIkr-GlnXBee4HHUHjxOsE0BsjJFirLkfeujXrAHwf_bFhdC4a0Ciz8NPe_jMxDxxJR14big5eLUbyVvZZ44iDovJwwowIKgdSdzvE4K4-3OoXrQ4J3DESi16Oqb2063jmHqz3PiEF79LEQ13z31AUuZ4hEny6AUf5h6M_dvvhfs6yKS9J5DyVsD-b8d-p6d_iXRNV3rxcrBHvrbvbt3f6rg"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 technical-data text-[10px] uppercase">Editorial_01 // Layout</div>
+</div>
+<h3 class="text-[32px]">Palabrería / Editorial</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-stack-xl px-margin-mobile md:px-margin-desktop bg-on-background text-background overflow-hidden" id="contact">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-6">
+<p class="technical-data text-[12px] font-semibold text-primary mb-6 tracking-widest uppercase">Colaboración</p>
+<h2 class="text-[48px] md:text-[72px] mb-8 leading-tight">Diseñemos el<br/>Futuro</h2>
+<p class="text-[18px] text-surface-container-highest max-w-sm mb-12">Estamos abiertos a colaboraciones que busquen elevar su lenguaje visual a través de la creatividad funcional.</p>
+<a class="inline-block border-2 border-primary text-primary px-10 py-5 technical-data text-[12px] font-semibold uppercase tracking-[0.2em] hover:bg-primary hover:text-on-primary transition-all duration-300 block-shadow" href="mailto:studio@carlostenopala.com">
+                        studio@carlostenopala.com
+                    </a>
+</div>
+<div class="md:col-start-8 md:col-span-5 hidden md:block">
+<div class="relative w-full aspect-[4/5] border border-surface-container-highest/20 p-8 flex flex-col justify-between">
+<span class="technical-data text-[10px] opacity-40 uppercase">Form_CT_09 // Design Inquiry</span>
+<div class="space-y-8">
+<div class="border-b border-surface-container-highest/30 pb-2">
+<label class="technical-data text-[10px] block mb-1 opacity-60 uppercase">Nombre</label>
+<input class="bg-transparent border-none w-full p-0 focus:ring-0 text-[16px] text-background placeholder:opacity-30" placeholder="..." type="text"/>
+</div>
+<div class="border-b border-surface-container-highest/30 pb-2">
+<label class="technical-data text-[10px] block mb-1 opacity-60 uppercase">Mensaje</label>
+<input class="bg-transparent border-none w-full p-0 focus:ring-0 text-[16px] text-background placeholder:opacity-30" placeholder="..." type="text"/>
+</div>
+</div>
+<div class="text-right">
+<button class="technical-data text-[12px] font-semibold text-primary hover:underline uppercase" onclick="alert('Mensaje enviado. Nos pondremos en contacto pronto.')">Enviar —&gt;</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-outline/20">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-stack-md max-w-[1440px] mx-auto">
+<div class="text-[32px] text-primary mb-8 md:mb-0">CT STUDIO</div>
+<div class="flex flex-wrap justify-center gap-8 md:gap-12 mb-8 md:mb-0">
+<a class="technical-data text-[12px] text-on-surface-variant hover:text-primary transition-opacity opacity-80 hover:opacity-100 underline uppercase" href="#">Instagram</a>
+<a class="technical-data text-[12px] text-on-surface-variant hover:text-primary transition-opacity opacity-80 hover:opacity-100 underline uppercase" href="#">LinkedIn</a>
+<a class="technical-data text-[12px] text-on-surface-variant hover:text-primary transition-opacity opacity-80 hover:opacity-100 underline uppercase" href="#">Journal</a>
+<a class="technical-data text-[12px] text-on-surface-variant hover:text-primary transition-opacity opacity-80 hover:opacity-100 underline uppercase" href="#">Privacy</a>
+</div>
+<div class="technical-data text-[10px] text-on-surface-variant/60 text-center md:text-right max-w-[200px] uppercase">
+                © 2026 Carlos Tenopala Design Studio. Built with structural honesty.
+            </div>
+</div>
+</footer>
+<script>
+        // Sticky header transition
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-1');
+                header.classList.remove('py-unit');
+            } else {
+                header.classList.add('py-unit');
+                header.classList.remove('py-1');
+            }
+        });
+
+        // Handle project card clicks
+        document.querySelectorAll('.group.cursor-pointer').forEach(item => {
+            item.addEventListener('click', () => {
+                const title = item.querySelector('h3').innerText;
+                alert(`Explorando análisis técnico: ${title}`);
+            });
+        });
+    </script>
+</body></html>
